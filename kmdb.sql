@@ -65,7 +65,7 @@
 -- Turns column mode on but headers off
 .mode column
 .headers off
-.width 1, 25, 25, 25
+.width 25, 25, 25
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -75,7 +75,6 @@ DROP TABLE IF EXISTS top_cast;
 -- Create new tables, according to your domain model
 -- TODO!
 CREATE TABLE movies (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   year INTEGER,
   rating TEXT,
@@ -83,7 +82,6 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE top_cast (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   actor TEXT,
   movie_character TEXT
