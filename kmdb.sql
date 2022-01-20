@@ -65,6 +65,7 @@
 -- Turns column mode on but headers off
 .mode column
 .headers off
+.width 1, 25, 25, 25
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -85,10 +86,8 @@ CREATE TABLE top_cast (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   actor TEXT,
-  character TEXT
+  movie_character TEXT
 );
-
-
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
@@ -105,7 +104,8 @@ VALUES ("Batman Begins", 2005, "PG-13", "Christopher Nolan"),
 
 -- The SQL statement for the movies output
 -- TODO!
-SELECT * FROM movies ;
+SELECT * FROM movies;
+
 
 -- Prints a header for the cast output
 .print ""
@@ -116,3 +116,22 @@ SELECT * FROM movies ;
 
 -- The SQL statement for the cast output
 -- TODO!
+INSERT INTO top_cast (movie_title, actor, movie_character)
+VALUES ("Batman Begins", "Christian Bale", "Bruce Wayne"), 
+       ("Batman Begins", "Michael Caine", "Alfred"),
+       ("Batman Begins", "Liam Neeson", "Ra's Al Ghul"),
+       ("Batman Begins", "Katie Holmes", "Rachel Dawes"),
+       ("Batman Begins", "Gary Oldman", "Commissioner Gordon"),
+       ("The Dark Knight", "Christian Bale", "Bruce Wayne"),
+       ("The Dark Knight", "Heath Ledger", "Joker"),
+       ("The Dark Knight", "Aaron Eckhart", "Harvey Dent"),
+       ("The Dark Knight", "Michael Caine", "Alfred"),
+       ("The Dark Knight", "Maggie Gyllenhaal", "Rachel Dawes"),
+       ("The Dark Knight Rises", "Christian Bale", "Bruce Wayne"),
+       ("The Dark Knight Rises", "Gary Oldman", "Commissioner Gordon"),
+       ("The Dark Knight Rises", "Tom Hardy", "Bane"),
+       ("The Dark Knight Rises", "Joseph Gordon-Levitt", "John Blake"),
+       ("The Dark Knight Rises", "Anne Hathaway", "Selina Kyle");
+
+SELECT * FROM top_cast;
+
